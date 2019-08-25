@@ -69,6 +69,6 @@ class CommentariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commentary_params
-      params.require(:commentary).permit(:title, :date, :description, :author)
+      params.require(:commentary).permit(:title, :body, :user_id, :post_id)
     end
 end

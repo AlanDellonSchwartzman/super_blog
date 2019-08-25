@@ -2,16 +2,14 @@
 
 one:
   title: MyString
-  date: MyString
-  description: MyString
-  author: MyString
-  commentary: MyString
+  body: MyString
   img_post: MyString
+  user: one
+  commentary: one
 
 two:
   title: MyString
-  date: MyString
-  description: MyString
-  author: MyString
-  commentary: MyString
+  body: MyString
   img_post: MyString
+  user: two
+  commentary: two

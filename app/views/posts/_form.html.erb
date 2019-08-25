@@ -17,28 +17,23 @@
   </div>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.text_field :date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
-  </div>
-
-  <div class="field">
-    <%= form.label :commentary %>
-    <%= form.text_field :commentary %>
+    <%= form.label :body %>
+    <%= form.text_field :body %>
   </div>
 
   <div class="field">
     <%= form.label :img_post %>
     <%= form.text_field :img_post %>
+  </div>
+
+  <div class="field">
+    <% form.label :user_id %>
+    <% form.text_field :user_id, :value => current_user%>
+  </div>
+
+  <div class="field">
+    <%= form.label :commentary_id %>
+    <%= form.text_field :commentary_id %>
   </div>
 
   <div class="actions">

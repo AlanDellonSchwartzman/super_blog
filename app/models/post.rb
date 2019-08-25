@@ -1,3 +1,5 @@
 class Post < ApplicationRecord
-    has_many :commentary
+  belongs_to :user
+  has_many :commentary
+  
 end

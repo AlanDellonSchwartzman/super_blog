@@ -1,36 +1,38 @@
+
+
+<head>
+  
+  
+  
+</head>
+
 <p id="notice"><%= notice %></p>
+
+<body>
+    
+  <% @posts.each do |post|%>
+      <h1>Posts mais recentes</h1>
+      
+          <h2>post.title</h2> <%= image_tag post.img_post, width:25, height:25%>
+          
+          <br>
+          <p>post.body</p>
+          <p>post.created_at</p> <p>post.author</p></p>
+          <br>
+          
+          <p>post.commentary</p>
+  
+  <%end%>
+  
+  
+  
+  
+</body>
+
+
 
 <h1>Posts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Author</th>
-      <th>Commentary</th>
-      <th>Img post</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.date %></td>
-        <td><%= post.description %></td>
-        <td><%= post.author %></td>
-        <td><%= post.commentary %></td>
-        <td><%= post.img_post %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 

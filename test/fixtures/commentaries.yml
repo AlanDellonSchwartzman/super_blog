@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  date: MyString
-  description: MyString
-  author: MyString
+  body: MyString
+  user: one
+  post: one
 
 two:
   title: MyString
-  date: MyString
-  description: MyString
-  author: MyString
+  body: MyString
+  user: two
+  post: two

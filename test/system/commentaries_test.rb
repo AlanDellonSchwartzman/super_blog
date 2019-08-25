@@ -14,10 +14,10 @@ class CommentariesTest < ApplicationSystemTestCase
     visit commentaries_url
     click_on "New Commentary"
 
-    fill_in "Author", with: @commentary.author
-    fill_in "Date", with: @commentary.date
-    fill_in "Description", with: @commentary.description
+    fill_in "Body", with: @commentary.body
+    fill_in "Post", with: @commentary.post_id
     fill_in "Title", with: @commentary.title
+    fill_in "User", with: @commentary.user_id
     click_on "Create Commentary"
 
     assert_text "Commentary was successfully created"
@@ -28,10 +28,10 @@ class CommentariesTest < ApplicationSystemTestCase
     visit commentaries_url
     click_on "Edit", match: :first
 
-    fill_in "Author", with: @commentary.author
-    fill_in "Date", with: @commentary.date
-    fill_in "Description", with: @commentary.description
+    fill_in "Body", with: @commentary.body
+    fill_in "Post", with: @commentary.post_id
     fill_in "Title", with: @commentary.title
+    fill_in "User", with: @commentary.user_id
     click_on "Update Commentary"
 
     assert_text "Commentary was successfully updated"

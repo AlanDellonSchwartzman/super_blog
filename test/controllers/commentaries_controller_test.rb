@@ -17,7 +17,7 @@ class CommentariesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create commentary" do
     assert_difference('Commentary.count') do
-      post commentaries_url, params: { commentary: { author: @commentary.author, date: @commentary.date, description: @commentary.description, title: @commentary.title } }
+      post commentaries_url, params: { commentary: { body: @commentary.body, post_id: @commentary.post_id, title: @commentary.title, user_id: @commentary.user_id } }
     end
 
     assert_redirected_to commentary_url(Commentary.last)
@@ -34,7 +34,7 @@ class CommentariesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update commentary" do
-    patch commentary_url(@commentary), params: { commentary: { author: @commentary.author, date: @commentary.date, description: @commentary.description, title: @commentary.title } }
+    patch commentary_url(@commentary), params: { commentary: { body: @commentary.body, post_id: @commentary.post_id, title: @commentary.title, user_id: @commentary.user_id } }
     assert_redirected_to commentary_url(@commentary)
   end
 
