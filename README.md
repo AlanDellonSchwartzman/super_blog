@@ -1,24 +1,11 @@
-# README
+# SuperBlog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+System developed with Ruby on Rails, this is a blog, where users can make posts and comments.
 
-Things you may want to cover:
+Features:
 
-* Ruby version
+* Ruby, '~> 2.4.4'
 
-* System dependencies
+* Rails, '~> 5.2.3'
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database: sqlite3
