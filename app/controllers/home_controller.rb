@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     
     
     @posts = Post.all.order("created_at DESC")
-    
+    @commentaries = Commentary.all.order("created_at DESC")
     
   end
   

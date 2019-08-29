@@ -26,17 +26,30 @@
     <%= form.text_field :img_post %>
   </div>
 
-  <div class="field">
-    <% form.label :user_id %>
-    <% form.text_field :user_id, :value => current_user%>
-  </div>
+  <!--<div class="field">-->
+  <!--  <#% form.label :user_id %>-->
+  <!--  <#% form.text_field :user_id, :value => current_user%>-->
+  <!--</div>-->
 
-  <div class="field">
-    <%= form.label :commentary_id %>
-    <%= form.text_field :commentary_id %>
-  </div>
+  <!--<div class="field">-->
+  <!--  <#%= form.label :commentary_id %>-->
+  <!--  <#%= form.text_field :commentary_id %>-->
+  <!--</div>-->
+  
+  <%= form.fields_for :commentary do |commentary_form| %>
+    <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :body %>
+      <%= form.text_area :body %>
+    </div>
+  <% end %>
+  
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Enviar" %>
   </div>
 <% end %>

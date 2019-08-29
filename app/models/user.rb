@@ -6,5 +6,11 @@ class User < ApplicationRecord
          
     has_many :commentary
     has_many :post
+    
+    rails_admin do
+    configure :player do
+      label 'Post criado por : '
+    end
+  end
          
 end
