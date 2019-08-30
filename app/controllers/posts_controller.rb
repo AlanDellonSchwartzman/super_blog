@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @post.commentary.build
   end
 
   # GET /posts/1/edit
@@ -72,9 +73,6 @@ class PostsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
       params.require(:post).permit(:title, :body, :img_post, :user_id,
-      commentary_attributes: [
-        :id, :title, :body, :user_id, :post_id, :_destroy
-      ])
-      
+      commentaries_attributes: [:id, :title, :body, :user_id, :post_id, :_destroy])
     end
 end

@@ -18,14 +18,14 @@
       <p> Criado em: <%= post.created_at %></p> <p> Por: <%= post.user.nickname %> </p>
       <br>
       
-      <p><% @post.commentary.each do |com|%>
+      <p><#% if false %> <% @post.commentary.each do |com|%>
       
         <h1>Posts mais recentes</h1>
         <h2> <%= com.title %> </h2>
         <br>
         <p><%= com.body %></p>
         <p> Criado em: <%= com.created %></p> <p> Por: <%= com.user.nickname %> </p>
-        <%end%>
+        <%end%> <#% end %>
       </p>
       <br>
       

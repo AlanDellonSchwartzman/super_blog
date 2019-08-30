@@ -26,25 +26,29 @@
     <%= form.text_field :img_post %>
   </div>
 
-  <!--<div class="field">-->
-  <!--  <#% form.label :user_id %>-->
-  <!--  <#% form.text_field :user_id, :value => current_user%>-->
-  <!--</div>-->
+  <% if false %> <div class="field">
+    <% form.label :user_id %>
+    <% form.text_field :user_id, :value => current_user%>
+  </div>
 
-  <!--<div class="field">-->
-  <!--  <#%= form.label :commentary_id %>-->
-  <!--  <#%= form.text_field :commentary_id %>-->
-  <!--</div>-->
+  <div class="field">
+    <%= form.label :commentary_id %>
+    <%= form.text_field :commentary_id %>
+  </div> <% end %>
   
-  <%= form.fields_for :commentary do |commentary_form| %>
+  <br>
+  
+  <h2>Commentário ?</h2>
+  
+  <%= form.fields_for :commentaries do |commentary| %>
     <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title %>
+      <%= commentary.label :title %>
+      <%= commentary.text_field :title %>
     </div>
   
     <div class="field">
-      <%= form.label :body %>
-      <%= form.text_area :body %>
+      <%= commentary.label :body %>
+      <%= commentary.text_area :body %>
     </div>
   <% end %>
   

@@ -15,7 +15,6 @@ class CommentariesController < ApplicationController
   # GET /commentaries/new
   def new
     @commentary = Commentary.new
-    @commentary.contacts.build
   end
 
   # GET /commentaries/1/edit
@@ -27,6 +26,7 @@ class CommentariesController < ApplicationController
   def create
     @commentary = Commentary.new(commentary_params)
     @commentary.user = current_user
+    @commentary.post = @post
 
     respond_to do |format|
       if @commentary.save
