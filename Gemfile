@@ -37,7 +37,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise', '~> 4.2'
-gem 'pry', '~> 0.12.2'
+gem 'pry', '~> 0.12.2', :group => :development
+gem 'pry-theme'
 
 gem 'rails_admin', '~> 2.0'
 

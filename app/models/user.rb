@@ -8,7 +8,7 @@ class User < ApplicationRecord
     has_many :post
     
     rails_admin do
-    configure :player do
+    configure :user do
       label 'Post criado por : '
     end
   end
