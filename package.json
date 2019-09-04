@@ -1,5 +1,14 @@
 {
   "name": "super_blog",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0"
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/AlanDellonSchwartzman/super_blog.git",
+  "author": "AlanDellon",
+  "license": "MIT"
 }
