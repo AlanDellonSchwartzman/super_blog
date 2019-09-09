@@ -20,9 +20,9 @@
         <td><%= commentary.body %></td>
         <td><%= commentary.user %></td>
         <td><%= commentary.post %></td>
-        <td><%= link_to 'Show', commentary %></td>
-        <td><%= link_to 'Edit', edit_commentary_path(commentary) %></td>
-        <td><%= link_to 'Destroy', commentary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualizar', commentary %></td>
+        <td><%= link_to 'Editar', edit_commentary_path(commentary) %></td>
+        <td><%= link_to 'Apagar', commentary, method: :delete, data: { confirm: 'Você tem certeza que deseja apagar este comentário?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Commentary', new_commentary_path %>
+<%= link_to 'Novo comentário', new_commentary_path %>

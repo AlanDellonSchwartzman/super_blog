@@ -1,0 +1,48 @@
+<head>
+  
+  
+  
+</head>
+
+
+<body>
+  <header>
+    <p id="notice"><%= notice %></p>
+    
+    <%= link_to 'Novo Post', new_post_path %>
+    <br>
+  </header>
+  
+    
+  <% @posts.each do |post|%>
+      <h1>Posts mais recentes</h1>
+      
+      <h2> <%= post.title %> </h2> <%= image_tag post.img_post, width:50, height:50%>
+          
+      <br>
+      <p><%= post.body %></p>
+      <p> Criado em: <%= post.created_at %></p> <p> Por: <%= post.user.nickname %> </p>
+      <br>
+      
+      <p><% if false %> <% @post.commentary.each do |com|%>
+      
+        <h1>Posts mais recentes</h1>
+        <h2> <%= com.title %> </h2>
+        <br>
+        <p><%= com.body %></p>
+        <p> Criado em: <%= com.created %></p> <p> Por: <%= com.user.nickname %> </p>
+        <%end%> <% end %>
+      </p>
+      <br>
+      
+      <h2>Deixe seu comentário</h2>
+      <!--<#%= commentary_new @post, @current_user %>-->
+      
+      <br>
+      
+  <%end%>
+  
+  
+</body>
+
+<br>

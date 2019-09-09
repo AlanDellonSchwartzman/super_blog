@@ -1,12 +1,14 @@
 module ApplicationHelper
     
-    def commentary_new (user, post)
+    def commentary_new (commentary, post)
        render partial: "commentaries/form",
-              locals: {user: user, post: post}
+              locals: {commentary: commentary, post: post}
     end
     
     
-    
+    def no_date_time (date)
+        date.strftime(" %d/%m/%Y ")
+    end
     
     
 end

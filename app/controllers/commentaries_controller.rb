@@ -26,12 +26,12 @@ class CommentariesController < ApplicationController
   def create
     @commentary = Commentary.new(commentary_params)
     @commentary.user = current_user
-    @commentary.post = @post
+    @commentary.post = @commentary.post
 
     respond_to do |format|
       if @commentary.save
         format.html { redirect_to @commentary, notice: 'Commentary was successfully created.' }
-        format.json { render :show, status: :created, location: @commentary }
+        format.json { render 'post/show', id: @comentary.post_id , status: :created, location: @commentary }
       else
         format.html { render :new }
         format.json { render json: @commentary.errors, status: :unprocessable_entity }
@@ -71,6 +71,6 @@ class CommentariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commentary_params
-      params.require(:commentary).permit(:title, :body, :user_id, :post_id)
+      params.require(:commentary).permit(:title, :body, :user_id, :post_id )
     end
 end

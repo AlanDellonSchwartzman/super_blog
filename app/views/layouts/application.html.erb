@@ -2,6 +2,11 @@
 <html>
   <head>
     <title>SuperBlog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Novidades do mundo tecnologico e muito mais!">
+    <meta name="author" content="Alan Dellon">
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -18,10 +23,60 @@
 
   <body>
     <header>
+       <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="home/index">SuperBlog</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <% if user_signed_in? %>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Perfil</a>
+                <ul>
+                  <% if user_signed_in? %>
+                  <li>
+                    <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'nav-link' %>
+                  </li>
+                  <li>
+                    <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+                  </li>
+                  <% else %>
+                  <li>
+                    <%= link_to "Cadastrar-se", new_user_registration_path, :class => 'nav-link'  %>
+                  </li>
+                  <li>
+                    <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
+                  </li>
+                  <% end %>
+                </ul>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
       <div class="navbar navbar-fixed-top">
         <div class="navbar-inner">
           <div class="container">
-            <a class="brand" href="/">Home</a>
+            <a class="brand" href="/">Home</a>/
             <ul class="nav">
               <li class="active"><a href="/ideas">Menu</a></li>
             </ul>

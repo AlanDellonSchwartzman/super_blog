@@ -1,29 +1,62 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Título:</strong>
   <%= @post.title %>
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @post.body %>
-</p>
-
-<p>
-  <strong>Img post:</strong>
+  <strong>Imagem</strong>
   <%= @post.img_post %>
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @post.user.nickname %>
+  <strong>Corpo:</strong>
+  <%= @post.body %>
 </p>
 
 <p>
-  <strong>Commentary:</strong>
-  <%= @post.commentary %>
+  <strong>Usuário:</strong>
+  <%= @post.user.nickname %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
+<!--<p>-->
+<!--  <strong>Commentary:</strong>-->
+<!--  <%#= @post.commentary.title %>-->
+<!--</p>-->
+
+<strong>Comentários<strong>
+  </br>
+  </br>
+
+  <%# if false %>
+  
+    <% @post.commentary.each do |commentary| %>
+      <p>
+        <strong>Comentário de: </strong>
+        <%= commentary.user.nickname %>
+      </p>
+  
+      <p>
+        <strong>Título:</strong>
+        <%= commentary.title %>
+      </p>
+      
+      <p>
+        <strong>Corpo:</strong>
+        <%= commentary.body %>
+      </p>
+    <% end %> <%# end %>
+   
+    </br>
+    </br>
+    
+    <strong>Deixe o seu comentário<strong>
+    
+    <%= render 'commentaries/form', commentary: @post.commentary.new(post_id: @post.id )%>
+  
+  </br>
+
+<%= link_to 'Editar', edit_post_path(@post) %> |
+<%= link_to 'Voltar', posts_path %>

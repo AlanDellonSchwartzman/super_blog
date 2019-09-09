@@ -11,20 +11,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # POST /resource
-  def create
-    super
-    @user = User.new(post_params)
+  # def create
+  #   super
+  #   @user = User.new(sign_up_params)
     
-    respond_to do |format|
-      if @users.save
-        format.html { redirect_to @users, notice: 'Cadastro feito com sucesso!' }
-        format.json { render :show, status: :created, location: @users }
-      else
-        format.html { render :new }
-        format.json { render json: @users.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @user.save
+  #       format.html { redirect_to @user, notice: 'Cadastro feito com sucesso!' }
+  #       format.json { render :show, status: :created, location: @user }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @user.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # GET /resource/edit
   def edit
@@ -83,6 +83,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :nickname, :email])
+  end
+  
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :nickname, :email, :password])
   end
 
   # The path used after sign up.
