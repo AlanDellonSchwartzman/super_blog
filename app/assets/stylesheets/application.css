@@ -13,3 +13,29 @@
   *= require_self
   *= require bootstrap/dist/css/bootstrap
  */
+ 
+/*ul li a {*/
+/*  border: 0;*/
+/*  display: block;*/
+/*  color: black;*/
+/*}*/
+
+.btn-secondary{
+  padding: 0;
+  background-color: rgb(51, 51, 51);
+  margin: 0;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.btn {
+  border: 0;
+  background-color: rgb(51, 51, 51);
+}
+
+.dropdown-menu a {
+  color: rgb(51, 51, 51) !important;
+}

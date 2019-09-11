@@ -54,7 +54,7 @@
     
     <strong>Deixe o seu comentário<strong>
     
-    <%= render 'commentaries/form', commentary: @post.commentary.new(post_id: @post.id )%>
+    <%= link_to 'Comentar', new_post_commentary_path(@post) %>
   
   </br>
 

@@ -23,20 +23,10 @@
 
   <div class="field">
     <%= form.label :img_post %>
-    <%= form.file_field :avatar %>
+    <%= form.file_field :img_post %>
   </div>
 
-  <%# if false %> <div class="field">
-    <% form.label :user_id %>
-    <% form.text_field :user_id, :value => current_user%>
-  </div>
-
-  <div class="field">
-    <%= form.label :commentary_id %>
-    <%= form.text_field :commentary_id %>
-  </div> 
-  
-  <br>
+  </br>
   
   <h2>Commentário ?</h2>
   
@@ -50,8 +40,7 @@
       <%= commentary.label :body %>
       <%= commentary.text_area :body %>
     </div>
-  <% end %> <%# end %>
-  
+  <% end %>
 
   <div class="actions">
     <%= form.submit "Enviar" %>

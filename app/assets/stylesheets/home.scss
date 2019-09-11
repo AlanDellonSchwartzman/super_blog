@@ -3,6 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  padding-top: 56px;
+  padding-top: 55px;
   margin: 0px;
 }
+
+a:visited {
+  color: white;
+  display: block;
+}
+
+.img-thumbnail {
+  width: 150px;
+  height: 150px;
+}
+

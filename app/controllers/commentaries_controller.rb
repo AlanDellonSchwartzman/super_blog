@@ -24,14 +24,15 @@ class CommentariesController < ApplicationController
   # POST /commentaries
   # POST /commentaries.json
   def create
+    @post = Post.find(params[:post_id])
     @commentary = Commentary.new(commentary_params)
     @commentary.user = current_user
-    @commentary.post = @commentary.post
+    @commentary.post = @post
 
     respond_to do |format|
       if @commentary.save
         format.html { redirect_to @commentary, notice: 'Commentary was successfully created.' }
-        format.json { render 'post/show', id: @comentary.post_id , status: :created, location: @commentary }
+        format.json { render :show, status: :created, location: @commentary }
       else
         format.html { render :new }
         format.json { render json: @commentary.errors, status: :unprocessable_entity }

@@ -18,8 +18,7 @@
           <% @posts.each do |post| %>
           <!-- Blog Post -->
           <div class="card mb-4">
-            <%= image_tag url_for(post.img_post), width:750, height:300, :class => "card-img-top" %>
-            <%= post.img_post %>
+            <%= image_tag post.img_post, width:750, height:300, :class => "card-img-top img-thumbnail"  %>
             <div class="card-body">
               <h2 class="card-title"><%= post.title %></h2>
               <p class="card-text"><%= post.body[1..150] << "[...]" %></p>

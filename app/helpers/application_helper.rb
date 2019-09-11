@@ -10,5 +10,4 @@ module ApplicationHelper
         date.strftime(" %d/%m/%Y ")
     end
     
-    
 end

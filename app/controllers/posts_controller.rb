@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.includes(:commentary)
+    @posts = Post.includes(:commentary).where('posts.user_id = ' << current_user.id.to_s)
   end
 
   # GET /posts/1
@@ -72,7 +72,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:id, :title, :body, :img_post, :user_id,
+      params.require(:post).permit(:id, :title, :body, :user_id, :img_post,
       commentary_attributes: [:id, :title, :body, :user_id, :post_id, :_destroy])
     end
 end

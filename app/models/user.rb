@@ -6,6 +6,7 @@ class User < ApplicationRecord
          
     has_many :commentary
     has_many :post
+    acts_as_paranoid
     
     rails_admin do
     configure :user do

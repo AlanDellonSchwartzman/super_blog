@@ -14,10 +14,8 @@
     <%= stylesheet_link_tag    'scaffolds', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    params[:controller], media: 'all', 'data-turbolinks-track': 'reload' %>
     
-    
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag params[:controller], 'data-turbolinks-track': 'reload' %>
-    
     
   </head>
 
@@ -33,66 +31,54 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="index">Home
-                  <span class="sr-only">(current)</span>
+                <%= link_to 'Home', "http://localhost:3000", :class => 'nav-link' %>
                 </a>
               </li>
               <% if user_signed_in? %>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Perfil</a>
-                <ul>
-                  <% if user_signed_in? %>
-                  <li>
-                    <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'nav-link' %>
-                  </li>
-                  <li>
-                    <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
-                  </li>
-                  <% else %>
-                  <li>
-                    <%= link_to "Cadastrar-se", new_user_registration_path, :class => 'nav-link'  %>
-                  </li>
-                  <li>
-                    <%= link_to "Login", new_user_session_path, :class => 'nav-link'  %>
-                  </li>
-                  <% end %>
-                </ul>
-              </li>
+                <li class="nav-item">
+                  <%= link_to 'Meus posts', posts_path, :class => 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to 'Novo post', new_post_path, :class => 'nav-link' %>
+                </li>
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <a class="btn btn-secondary btn-sm dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Perfil
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'dropdown-item' %>
+                      <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %>
+                      <% else %>
+                      <%= link_to 'Cadastar-se', new_user_registration_path, :class => 'dropdown-item' %>
+                      <%= link_to "Login", new_user_session_path, :class => 'dropdown-item'  %>
+                        
+                    </div>
+                  </div>
+                  
+                  
+                  <!--<ul>-->
+                  <!--  <li>-->
+                  <!--    <div class="dropdown">-->
+                  <!--      <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                  <!--        Link dropdown-->
+                  <!--      </a>-->
+                      
+                  <!--      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">-->
+                  <!--        <a class="dropdown-item" href="#">Alguma ação</a>-->
+                  <!--        <a class="dropdown-item" href="#">Outra ação</a>-->
+                  <!--        <a class="dropdown-item" href="#">Alguma coisa aqui</a>-->
+                  <!--      </div>-->
+                  <!--    </div>-->
+                  <!--  </li>-->
+                    
+                </li>
               <% end %>
             </ul>
           </div>
         </div>
       </nav>
       
-      <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="brand" href="/">Home</a>/
-            <ul class="nav">
-              <li class="active"><a href="/ideas">Menu</a></li>
-            </ul>
-            <p class="navbar-text pull-right">
-              <% if user_signed_in? %>
-                Bem vindo! <strong><%= current_user.email %></strong>.
-                <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-                <%= link_to "Sair", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-              <% else %>
-                <%= link_to "Cadastrar-se", new_user_registration_path, :class => 'navbar-link'  %> |
-                <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-              <% end %>
-            </p>
-          </div>
-        </div>
-      </div>
     </header>
     
     <p class="notice"><%= notice %></p>
