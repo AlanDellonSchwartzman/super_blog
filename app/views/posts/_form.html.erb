@@ -1,8 +1,7 @@
 <%= form_with(model: post, local: true) do |form| %>
   <% if post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
+      <h2><%= pluralize(post.errors.count, "error") %> impediu que este post fosse salvo: </h2>
       <ul>
       <% post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,38 +10,30 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_field :body %>
-  </div>
-
-  <div class="field">
-    <%= form.label :img_post %>
-    <%= form.file_field :img_post %>
-  </div>
-
-  </br>
-  
-  <h2>Commentário ?</h2>
-  
-  <%= form.fields_for :commentaries do |commentary| %>
-    <div class="field">
-      <%= commentary.label :title %>
-      <%= commentary.text_field :title %>
+  <div class="field form-group">
+    <div class="col-md-6 offset-md-3">
+      <%= form.label "Título" %>
+      <%= form.text_field :title, :class => "form-control" %>
     </div>
-  
-    <div class="field">
-      <%= commentary.label :body %>
-      <%= commentary.text_area :body %>
-    </div>
-  <% end %>
+  </div>
 
-  <div class="actions">
-    <%= form.submit "Enviar" %>
+  <div class="field form-group">
+    <div class="col-md-6 offset-md-3">
+      <%= form.label "Conteúdo" %>
+      <%= form.text_field :body, :class => "form-control" %>
+    </div>
+  </div>
+
+  <div class="field form-group">
+    <div class="col-md-6 offset-md-3">
+      <%= form.label "Imagem" %>
+      <%= form.file_field :img_post, :class => "img-control" %>
+    </div>
+  </div>
+
+  <div class="actions form-group">
+    <div class="col-md-6 offset-md-3">
+      <%= form.submit "Enviar", :class => "btn btn-primary" %>
+    </div>
   </div>
 <% end %>

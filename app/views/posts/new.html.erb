@@ -1,5 +1,14 @@
-<h1>New Post</h1>
+
+<div class = "conteiner">
+    <div class = "form-group d-flex justify-content-center">
+      <h1>Novo post</h1>
+    </div>
 
 <%= render 'form', post: @post %>
 
-<%= link_to 'Voltar', posts_path %>
+
+<div class="actions form-group">
+      <div class="col-md-6 offset-md-3">
+        <%= link_to 'Voltar', posts_path %>
+      </div>
+    </div>
