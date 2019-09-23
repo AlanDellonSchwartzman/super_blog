@@ -5,6 +5,13 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.includes(:commentary).where('posts.user_id = ' << current_user.id.to_s)
+    
+    respond_to do |format|
+        format.html { }
+        format.csv { send_data text: @posts.to_csv }
+        format.xls { send_data text: @posts.to_csv(col_sep: "\t")}
+    end
+    
   end
 
   # GET /posts/1
@@ -44,7 +51,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Post atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
@@ -58,7 +65,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_url, notice: 'Post apagado com sucesso!' }
       format.json { head :no_content }
     end
   end
