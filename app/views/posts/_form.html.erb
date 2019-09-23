@@ -20,7 +20,7 @@
   <div class="field form-group">
     <div class="col-md-6 offset-md-3">
       <%= form.label "Categoria" %>
-      <%= select("post", "category_id", Category.all.order("name ASC").collect {|c| [ c.name, c.id]}, {prompt: "Selecione uma categoria"},  {class: "form-control", require} ) %>
+      <%= select("post", "category_id", Category.all.order("name ASC").collect {|c| [ c.name, c.id]}, {prompt: "Selecione uma categoria"},  {class: "form-control", require: true} ) %>
     </div>
   </div>
 
