@@ -8,10 +8,22 @@ class User < ApplicationRecord
     has_many :post
     acts_as_paranoid
     
-    rails_admin do
-    configure :user do
-      label 'Post criado por : '
+    def users_fields
+      [self.name, self.nickname, self.admin].compact.join(', ')
     end
-  end
+    
+    RailsAdmin.config do |config|
+      config.model User do
+        list do
+          # virtual field
+          configure :users_fields do
+            # any configuration
+          end
+          fields :name, :nickname, :admin
+        end
+      end
+    end
+    
+    
          
 end
