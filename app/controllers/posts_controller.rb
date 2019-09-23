@@ -7,9 +7,12 @@ class PostsController < ApplicationController
     @posts = Post.includes(:commentary).where('posts.user_id = ' << current_user.id.to_s)
     
     respond_to do |format|
-        format.html { }
-        format.csv { send_data text: @posts.to_csv }
-        format.xls { send_data text: @posts.to_csv(col_sep: "\t")}
+    format.xlsx {
+      response.headers[
+        'Content-Disposition'
+      ] = "attachment; filename= posts.xlsx"
+    }
+    format.html { render :index }
     end
     
   end
@@ -78,7 +81,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:id, :title, :body, :user_id, :img_post, :categories_id,
+      params.require(:post).permit(:id, :title, :body, :user_id, :img_post, :category_id,
       commentary_attributes: [:id, :title, :body, :user_id, :post_id, :_destroy])
     end
 end

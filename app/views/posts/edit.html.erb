@@ -5,6 +5,10 @@
 
 <%= render 'form', post: @post %>
 
-<%= link_to 'Show', @post, :class => "badge badge-light" %> |
-<%= link_to 'Back', posts_path, :class => "badge badge-light" %>
+<div class="field form-group">
+    <div class="actions col-md-6 offset-md-3">  
+      <%= link_to 'Visualizar', @post, :class => "badge badge-light" %> |
+      <%= link_to 'Voltar', :back, :class => "badge badge-light" %>
+    </div>
+</di>
 </div>

@@ -40,8 +40,11 @@ gem 'devise', '~> 4.2'
 gem 'pry', '~> 0.12.2', :group => :development
 gem 'pry-theme'
 gem "paranoia", "~> 2.2"
-
 gem 'rails_admin', '~> 2.0'
+
+gem 'rubyzip', '>= 1.2.1'
+gem 'caxlsx'
+gem 'axlsx_rails'
 
 
 group :development, :test do

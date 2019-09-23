@@ -1,0 +1,29 @@
+wb = xlsx_package.workbook
+
+wb.styles do |style|
+  project_heading = style.add_style(b: true, sz: 14)
+  heading = style.add_style(b: true)
+  
+  
+
+wb.add_worksheet(name: "Posts") do |sheet|
+  # Create the header row
+  sheet.add_row ["Título do Post", "Categoria", "Conteúdo", "Autor", "Data da postagem", "Comentários"], style: heading
+  
+  
+  # Create entries for each item
+  
+  comen = " ".to_s
+  
+  @posts.each do |post|
+  
+    post.commentary.each do |com| 
+      comen << com.body.to_s + " // "
+    end
+    
+    sheet.add_row [post.title, post.category.name, post.body, post.user.nickname, post.created_at.strftime(" %d/%m/%Y "), comen]
+    
+    comen = " ".to_s
+    end
+  end
+end
