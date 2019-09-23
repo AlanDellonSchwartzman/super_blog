@@ -17,6 +17,8 @@ Rails.application.config.assets.precompile += %w(
     commentaries.js
     home.js
     posts.js
+    categories.js
+    access.js
     users/passwords.js
     users/registrations.js
     users/sessions.js
@@ -26,7 +28,9 @@ Rails.application.config.assets.precompile += %w(
     commentaries.css
     home.css
     posts.css
+    categories.css
     scaffolds.css
+    access.css
     users/passwords.css
     users/registrations.css
     users/sessions.css

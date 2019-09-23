@@ -1,8 +1,8 @@
-
+<div class = "conteiner">
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
 <form>
-  <div class = "conteiner">
     <div class = "form-group d-flex justify-content-center">
       <h2>Log in</h2>
     </div>
@@ -34,7 +34,7 @@
   
     <div class="actions form-group">
       <div class="col-md-6 offset-md-3">
-        <%= f.submit "Entrar", :class => "btn btn-primary"%>
+        <%= f.submit "Entrar", :class => "btn btn-primary" %>
       </div>
     </div>
     
@@ -43,6 +43,6 @@
         <%= render "devise/shared/links" %>
       </div>
     </div>
-  </div>
 </form>
 <% end %>
+</div>

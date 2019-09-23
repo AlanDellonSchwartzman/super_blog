@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :commentaries
+  resources :categories
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  
-  resources :posts do
-    resources :commentaries, only: [:new, :edit, :create, :update, :destroy]
-  end
   
   # devise_for :users
   devise_for :users, controllers: { 
@@ -17,6 +16,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   root :to => "home#index"
-  #get '/devise/user/edit', to: 'registrations#edit'
+  get '/access', to: 'access#index'
   
 end

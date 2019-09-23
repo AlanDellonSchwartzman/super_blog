@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Commentaries</h1>
+<h1>Comentários</h1>
 
-<table>
-  <thead>
+<table class="table table-striped table-responsive">
+  <thead class="thead-dark">
     <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>User</th>
+      <th>Título</th>
+      <th>Conteúdo</th>
+      <th>Criador</th>
       <th>Post</th>
       <th colspan="3"></th>
     </tr>
@@ -18,11 +18,11 @@
       <tr>
         <td><%= commentary.title %></td>
         <td><%= commentary.body %></td>
-        <td><%= commentary.user %></td>
-        <td><%= commentary.post %></td>
-        <td><%= link_to 'Visualizar', commentary %></td>
-        <td><%= link_to 'Editar', edit_commentary_path(commentary) %></td>
-        <td><%= link_to 'Apagar', commentary, method: :delete, data: { confirm: 'Você tem certeza que deseja apagar este comentário?' } %></td>
+        <td><%= commentary.user.nickname %></td>
+        <td><%= commentary.post.title %></td>
+        <td><%= link_to 'Visualizar', commentary,  :class => "badge badge-pill badge-secondary" %></td>
+        <td><%= link_to 'Editar', edit_commentary_path(commentary),  :class => "badge badge-pill badge-secondary" %></td>
+        <td><%= link_to 'Apagar', commentary, method: :delete, :class => "badge badge-pill badge-secondary", data: { confirm: 'Você tem certeza que deseja apagar este comentário?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'Novo comentário', new_commentary_path %>
+<%= link_to 'Novo comentário', new_commentary_path, :class => "badge badge-light" %>

@@ -24,10 +24,9 @@ class CommentariesController < ApplicationController
   # POST /commentaries
   # POST /commentaries.json
   def create
-    @post = Post.find(params[:post_id])
     @commentary = Commentary.new(commentary_params)
     @commentary.user = current_user
-    @commentary.post = @post
+    #@commentary.post = @commentary.post
 
     respond_to do |format|
       if @commentary.save
@@ -72,6 +71,6 @@ class CommentariesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def commentary_params
-      params.require(:commentary).permit(:title, :body, :user_id, :post_id )
+      params.require(:commentary).permit(:title, :body, :user_id, :post_id)
     end
 end

@@ -1,62 +1,71 @@
-<p id="notice"><%= notice %></p>
+<div class = "container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Título:</strong>
-  <%= @post.title %>
-</p>
+  <div class="card border-secondary mb-3" style="max-width: 100rem;">
+    <div class="card-header">
+      <p>
+        <!--<strong>Imagem:</strong>-->
+        <%= image_tag @post.img_post, :class => "rounded mx-auto d-block img-thumbnail"  %>
+      </p>
+      <h5 class="card-title">
+        <!--<strong>Título:</strong>-->
+        <%= @post.title%>
+      </h5>
+    </div>
+    
+    <div class="card-body text-secondary">
+      <p class="card-text">
+        <!--<strong>Conteúdo:</strong>-->
+        <%= @post.body %>
+      </p>
+    </div>
+    
+    <div class="card-footer text-secondary bg-transparent border-secondary">
+      <p>
+        <strong>criador:</strong>
+        <%= @post.user.nickname %>
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Imagem</strong>
-  <%= @post.img_post %>
-</p>
-
-<p>
-  <strong>Corpo:</strong>
-  <%= @post.body %>
-</p>
-
-<p>
-  <strong>Usuário:</strong>
-  <%= @post.user.nickname %>
-</p>
-
-
-<!--<p>-->
-<!--  <strong>Commentary:</strong>-->
-<!--  <%#= @post.commentary.title %>-->
-<!--</p>-->
-
-<strong>Comentários<strong>
-  </br>
-  </br>
+  <div>
+  <h5 class = "card-title">Comentários</h5>
+  </div>
 
   <%# if false %>
   
-    <% @post.commentary.each do |commentary| %>
-      <p>
-        <strong>Comentário de: </strong>
-        <%= commentary.user.nickname %>
-      </p>
-  
-      <p>
-        <strong>Título:</strong>
-        <%= commentary.title %>
-      </p>
+  <% @post.commentary.each do |commentary| %>
+    <div class="card border-dark mb-3" style="max-width: 18rem;">
+      <div class="card-header">
+          <strong>Comentário de: </strong>
+          <%= commentary.user.nickname %>
+      </div>
+        
+      <div class="card-body text-dark">
+        <h6 class="card-title" >
+          <strong>Título:</strong>
+          <%= commentary.title %>
+        </h6>
       
-      <p>
-        <strong>Corpo:</strong>
-        <%= commentary.body %>
-      </p>
-    <% end %> <%# end %>
+        <p class="card-text">
+          <!--<strong>Corpo:</strong>-->
+          <%= commentary.body %>
+        </p>
+    </div>
+    </div>
+  <% end %> <%# end %>
    
-    </br>
-    </br>
-    
-    <strong>Deixe o seu comentário<strong>
-    
-    <%= link_to 'Comentar', new_post_commentary_path(@post) %>
-  
   </br>
+    
+  <div>
+  <h5 class = "card-title">Deixe o seu comentário!</h5>
+  </div>
 
-<%= link_to 'Editar', edit_post_path(@post) %> |
-<%= link_to 'Voltar', posts_path %>
+  <div class="card border-dark mb-3" style="max-width: 18rem;">
+    <%= render 'commentaries/form', commentary: @post.commentary.new(post_id: @post.id )%>
+  </div>
+    
+  </br>
+  <%= link_to 'Editar', edit_post_path(@post), :class => "badge badge-light"  %> |
+  <%= link_to 'Voltar', posts_path, :class => "badge badge-light"  %>
+</div>

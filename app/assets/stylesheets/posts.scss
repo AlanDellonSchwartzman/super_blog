@@ -1,3 +1,24 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+textarea {
+    resize: none;
+}
+
+.img-thumbnail {
+  width: 50px;
+  height: 50px;
+}
+
+tr td a {
+    color: black !important;
+}
+
+p {
+    text-align: justify;
+}
+
+.card-header .img-thumbnail {
+  width: 400px;
+  height: 150px;
+}

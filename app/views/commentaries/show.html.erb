@@ -1,24 +1,32 @@
+<div class = "container">
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @commentary.title %>
-</p>
-
-<p>
-  <strong>Body:</strong>
-  <%= @commentary.body %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @commentary.user %>
-</p>
-
-<p>
-  <strong>Post:</strong>
-  <%= @commentary.post %>
-</p>
-
-<%= link_to 'Edit', edit_commentary_path(@commentary) %> |
-<%= link_to 'Back', commentaries_path %>
+  <div class = "offset-md-4">
+    <div class="card border-secondary mb-3" style="max-width: 25rem;">
+      <div class="card-header">
+        <h5 class="card-title">
+          <strong>Título:</strong>
+          <%= @commentary.title %>
+        </h5>
+      </div>
+    
+      <div class="card-body text-secondary">
+        <p class="card-text">
+          <strong>Comentário:</strong>
+          <%= @commentary.body %>
+        </p>
+      </div>
+    
+      <div class="card-footer text-secondary bg-transparent border-secondary">
+        <p>
+          <strong>Usuário:</strong>
+          <%= @commentary.user.nickname %> |
+          <strong>Post:</strong>
+          <%= @commentary.post.title %>
+        </p>
+      </div>
+    </div>
+  
+    <%= link_to 'Editar', edit_commentary_path(@commentary), :class => "badge badge-light" %> |
+    <%= link_to 'Voltar', commentaries_path, :class => "badge badge-light" %>
+  </div>
+</div>

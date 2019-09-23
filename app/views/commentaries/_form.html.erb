@@ -12,14 +12,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="field form-group">
+      <div class="col-md-12">
+        <%= form.label "Título" %>
+        <%= form.text_field :title, :class => "form-control", :required => "true" %>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_area :body %>
+  <div class="field form-group">
+    <div class="col-md-12">
+      <%= form.label "Conteúdo" %>
+      <%= form.text_area :body, :class => "form-control", :required => "true" %>
+    </div>
   </div>
 
   <!--<div class="field">-->
@@ -27,9 +31,12 @@
   <!--  <#%= form.text_field :user_id %>-->
   <!--</div>-->
  
-    <%= form.text_field :post_id, :disabled => "disabled" %>
+    <%= form.text_field :post_id, :class => "invisible" %>
 
-  <div class="actions">
-    <%= form.submit "Enviar" %>
+  <div class="form-group">
+    <div class="actions col-md-4 offset-md-4">
+      <%= form.submit "Enviar", :class => "btn btn-primary" %>
+    </div>
   </div>
+  
 <% end %>

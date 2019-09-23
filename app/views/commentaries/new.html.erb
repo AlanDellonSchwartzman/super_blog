@@ -1,5 +1,13 @@
-<h1>Novo comentário</h1>
+<div class = "conteiner">
+  <div class = "form-group d-flex justify-content-center">
+    <h1>Novo comentário</h1>
+  </div>
+ 
+ <%= render 'form', commentary: @commentary %>
 
-<%= render 'form', commentary: @commentary %>
-
-<%= link_to 'Voltar', commentaries_path %>
+  <div class="field form-group">
+    <div class="actions col-md-4 offset-md-4">  
+      <%= link_to "Voltar", :back, :class => "badge badge-light" %>
+    </div>
+  </div>
+</div>

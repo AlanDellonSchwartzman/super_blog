@@ -1,0 +1,13 @@
+<div class = "conteiner">
+    <div class = "form-group d-flex justify-content-center">
+        <h1>Nova Categoria</h1>
+    </div>
+
+    <%= render 'form', category: @category %>
+
+    <div class="actions form-group">
+        <div class="col-md-6 offset-md-3">
+          <%= link_to 'Voltar', categories_path, :class => "badge badge-light" %>
+        </div>
+    </div>
+</div>

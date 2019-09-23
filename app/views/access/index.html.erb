@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <body>
+  
+    <!-- Page Content -->
+    <div class="container">
+  
+      <div class="row">
+        
+        <div class="field form-group">
+          <div class="col-md-6 offset-md-3">
+            <%= select(:user_id, :user_name, User.all.order("name ASC").collect {|u| [ u.name, u.id]}, {prompt: "Selecione uma usuário!"},  {class: "form-control", require: true} ) %>
+          </div>
+          <div class="col-md-6 offset-md-3">
+            <label>Poder: </label>
+            <%=  %>
+          </div>
+        </div>
+      </div>
+      <!-- /.row -->
+  
+    </div>
+    
+  </body>
+</html>
