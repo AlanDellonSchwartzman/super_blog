@@ -8,4 +8,6 @@ Features:
 
 * Rails, '~> 5.2.3'
 
+* Yarn, '~> 1.17.3'
+
 * Database: sqlite3
