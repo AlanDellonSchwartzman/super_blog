@@ -27,7 +27,7 @@
   <div class="field form-group">
     <div class="col-md-6 offset-md-3">
       <%= form.label "Conteúdo" %>
-      <%= form.text_area :body, :class => "form-control", :rows => "7", :required => "true"%>
+      <%= form.text_area :body, :class => "form-control", :rows => "7", :required => "true", :maxlength => "5000", :minlength => "500"%>
     </div>
   </div>
 

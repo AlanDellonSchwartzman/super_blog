@@ -25,6 +25,7 @@ class CommentariesController < ApplicationController
   # POST /commentaries.json
   def create
     @commentary = Commentary.new(commentary_params)
+    @commentary.user = current_user
 
     respond_to do |format|
       if @commentary.save
