@@ -12,22 +12,22 @@
 
   <div class="field form-group">
     <div class="col-md-6 offset-md-3">
-      <%= form.label "Título" %>
+      <%= form.label "Título", :class => "requerido" %> <font color="red">*</font>
       <%= form.text_field :title, :class => "form-control", autofocus: true, :required => "true" %>
     </div>
   </div>
 
   <div class="field form-group">
     <div class="col-md-6 offset-md-3">
-      <%= form.label "Categoria" %>
+      <%= form.label "Categoria", :class => "requerido" %> <font color="red">*</font>
       <%= select("post", "category_id", Category.all.order("name ASC").collect {|c| [ c.name, c.id]}, {prompt: "Selecione uma categoria"},  {class: "form-control", require: true} ) %>
     </div>
   </div>
 
-  <div class="field form-group">
-    <div class="col-md-6 offset-md-3">
-      <%= form.label "Conteúdo" %>
-      <%= form.text_area :body, :class => "form-control", :rows => "7", :required => "true", :maxlength => "5000", :minlength => "500"%>
+  <div class=" field form-group">
+    <div class=" col-md-6 offset-md-3">
+      <%= form.label "Conteúdo", :class => "requerido" %> <font color="red">*</font>
+      <%= form.text_area :body, :class => "form-control", :required => "true", :maxlength => "5000", :minlength => "500", :id => "body" %>
     </div>
   </div>
 
