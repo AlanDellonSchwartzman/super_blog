@@ -30,3 +30,7 @@ p {
 .requerido {
     display: inline;
 }
+
+input, button, select, optgroup, textarea {
+   margin: 0px 0px 25px 0px !important;
+}

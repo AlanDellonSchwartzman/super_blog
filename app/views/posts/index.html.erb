@@ -18,7 +18,7 @@
     <% @posts.each do |post| %>
       <tr>
         <td><%= post.title %></td>
-        <td><%= post.body[1..50] << " ..." %></td>
+        <td><%= post.body[0..50].html_safe << " ..." %></td>
         <td><%= image_tag post.img_post, :class => "card-img-top img-thumbnail"  %></td>
         <td><%= post.user.nickname %></td>
         <td><%= link_to 'Visualizar Comentários', post, :class => "badge badge-pill badge-secondary" %></td>
