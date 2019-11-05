@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7'
 gem 'pry', '~> 0.12.2', :group => :development
 gem 'pry-theme'
 gem "paranoia", "~> 2.2"
